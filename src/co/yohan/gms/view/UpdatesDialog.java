@@ -8,6 +8,14 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
+/**
+ * Clase UpdatesDialog - Clase que crea un JDialog con la info de 
+ * las actualizaciones
+ * 
+ * @version 1.4 - 03/02/2019
+ * @author Yohan Caro
+ *
+ */
 public class UpdatesDialog extends JDialog {
 	
 	private String message;
@@ -15,7 +23,7 @@ public class UpdatesDialog extends JDialog {
 
 	public UpdatesDialog() {
 		this.setTitle("News");
-		this.setSize(400,500);
+		this.setSize(400,540);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setLayout(new BorderLayout());
@@ -40,7 +48,11 @@ public class UpdatesDialog extends JDialog {
 	}
 	
 	private void setTextMessage() {
-		message = "		V 0.4!\n"
+		message = "		V 0.4.1! \n"
+				+ "- Delete code trash\n"
+				+ "- Commits"
+				+ "\n\n"
+				+ "		V 0.4!\n"
 				+ "- New games!\n"
 				+ "- Bug fixes\n"
 				+ "   -- Default numbers aren't editable now!\n"

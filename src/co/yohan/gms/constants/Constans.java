@@ -1,5 +1,11 @@
 package co.yohan.gms.constants;
 
+/**
+ * Clase Constans
+ * @version 1.0 09/03/2019
+ * @author Yohan Caro
+ *
+ */
 public class Constans {
 
 	//JDialog actions

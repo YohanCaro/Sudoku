@@ -14,6 +14,13 @@ import javax.swing.border.EmptyBorder;
 
 import co.yohan.gms.constants.Constans;
 
+/**
+ * Clase ButtonsOptionsPanel - Clase que crea los botones del area de juego
+ * 
+ * @version 1.1 - 28/10/2018
+ * @author Yohan Caro
+ *
+ */
 public class ButtonsOptionsPanel extends JPanel {
 	
 	private JButton bReset, bNewGame, bOut;
@@ -33,7 +40,6 @@ public class ButtonsOptionsPanel extends JPanel {
 		this.bNewGame = new JButton("New Game");
 		this.bNewGame.setActionCommand(Constans.NEW_GAME_ACT);
 		this.bNewGame.addActionListener(window.getEvents());
-		this.bNewGame.addMouseListener(window.getEvents());
 		this.add(bNewGame);
 		
 		this.add(Box.createRigidArea(new Dimension(5, 20)));

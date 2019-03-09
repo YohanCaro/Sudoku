@@ -12,8 +12,21 @@ import java.util.List;
 
 import co.yohan.gms.utilities.Utilities;
 
+/**
+ * Clase SudokuCSVDAO - Clase que guarda y carga un archido de numeros
+ * 
+ * @version 1.0 - 20/10/2018
+ * @author Yohan Caro
+ *
+ */
 public class SudokuCSVDAO {
 	
+	/**
+	 * Guarda una lista de matrices en un archico
+	 * @param list
+	 * @param ruta
+	 * @throws IOException
+	 */
 	public void escribirList(ArrayList<int[][]> list, String ruta) throws IOException {
 		
 		if (list != null && !list.isEmpty()) {
@@ -22,7 +35,7 @@ public class SudokuCSVDAO {
 			OutputStreamWriter writer = new OutputStreamWriter(outputStream);
 			
 			for (int[][] is : list) {
-				writer.write(this.matToString(is) + " ");
+				writer.write(Utilities.matToString(is) + " ");
 			}
 			
 			writer.close();
@@ -30,6 +43,12 @@ public class SudokuCSVDAO {
 		}
 	}
 	
+	/**
+	 * Clase que lee una lista de matrices
+	 * @param ruta
+	 * @return
+	 * @throws IOException
+	 */
 	public ArrayList<int[][]> leerList(String ruta) throws IOException {
 		ArrayList<int[][]> list = new ArrayList<>();
 		
@@ -49,14 +68,6 @@ public class SudokuCSVDAO {
 		return list;
 	}
 	
-	public String matToString(int[][] mat) throws IOException {
-		String sal = "";
-		for (int i = 0; i < mat.length; i++) {
-			sal += "" + mat[i][0] + mat[i][1] +  mat[i][2] +  mat[i][3] + mat[i][4] 
-					+ mat[i][5] + mat[i][6] + mat[i][7] + mat[i][8];
-		}
-		
-		return sal;
-	}
+
 
 }

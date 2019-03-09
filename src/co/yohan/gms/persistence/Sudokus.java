@@ -3,6 +3,13 @@ package co.yohan.gms.persistence;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase Sudokus - Taleros
+ * 
+ * @version 1.0 - 29/01/2019
+ * @author Yohan Caro
+ *
+ */
 public class Sudokus {
 	
 	private List<int[][]> sudokus;

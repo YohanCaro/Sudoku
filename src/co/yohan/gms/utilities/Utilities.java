@@ -1,9 +1,18 @@
 package co.yohan.gms.utilities;
 
+import java.io.IOException;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+/**
+ * Clase Utilities - Mucho que comentar (°- °)/
+ * 
+ * @version 1.3 - 20/10/2018
+ * @author Yohan Caro
+ *
+ */
 public class Utilities {
 		
 	public static void showMessageWarning(String mensaje) {
@@ -91,6 +100,16 @@ public class Utilities {
 			}
 		}
 		return counter;
+	}
+	
+	public static String matToString(int[][] mat) throws IOException {
+		String sal = "";
+		for (int i = 0; i < mat.length; i++) {
+			sal += "" + mat[i][0] + mat[i][1] +  mat[i][2] +  mat[i][3] + mat[i][4] 
+					+ mat[i][5] + mat[i][6] + mat[i][7] + mat[i][8];
+		}
+		
+		return sal;
 	}
 	
 	public static boolean isNumberOnArray(int n, int vec[]) {

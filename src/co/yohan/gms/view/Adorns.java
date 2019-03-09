@@ -8,6 +8,13 @@ import java.util.List;
 
 import co.yohan.gms.model.Square;
 
+/**
+ * Clase Adorns- Clase que crea los cuadrados (parte grafica) del juego
+ * 
+ * @version 1.5 - 20/10/2018
+ * @author Yohan Caro
+ *
+ */
 public class Adorns {
 	
 	private static int ancho = 50;
@@ -15,6 +22,11 @@ public class Adorns {
 	private Square squares[][];
 	private Square squares2[][];
 	
+	/**
+	 * Construye los cuadrados
+	 * @param x
+	 * @param y
+	 */
 	public Adorns(int x, int y) {
 		squares = new Square[3][3];
 		squares2 = new Square[1][1];
@@ -28,6 +40,10 @@ public class Adorns {
 				squares2[i][j] = new Square(i* 150 + x, j* 150 + y, 150, 150, Color.WHITE, Color.BLACK, new BasicStroke(5));
 	}
 	
+	/**
+	 * Dibuja los cuadrados
+	 * @param g
+	 */
 	public void draw(Graphics2D g) {
 		//Cuadros grandes
 		for (int i = 0; i < squares2.length; i++) 

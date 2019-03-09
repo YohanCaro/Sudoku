@@ -13,19 +13,33 @@ import co.yohan.gms.view.JDialogLogin;
 import co.yohan.gms.view.MainWindow;
 import co.yohan.gms.view.UpdatesDialog;
 
-public class Events implements ActionListener, MouseListener {
+/**
+ * Clase Events - Maneja los eventos de la vista
+ * 
+ * @version 1.2 09/03/2019
+ * @author Yohan Caro
+ *
+ */
+public class Events implements ActionListener {
 	
 	private MainWindow window;
 	private Tablero tab;
 	private boolean win;
 	private UpdatesDialog uDialog;
 	
+	/**
+	 * Constructor
+	 * @param window ventana principal
+	 */
 	public Events(MainWindow window) {
 		this.window = window;
 		tab = new Tablero();
 		win = false;
 	}
 	
+	/**
+	 * Eventos de los botones
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String comand = e.getActionCommand();
@@ -53,6 +67,11 @@ public class Events implements ActionListener, MouseListener {
 		}
 	}
 	
+	/**
+	 * Hilo que verifica si el usuario tiene un error y cambia de color la casilla
+	 * También evalua si el usuario ya ganó el juego
+	 * Muere cuando el jugador gana
+	 */
 	public void verificator() {
 		new Thread(new Runnable() {
 			
@@ -73,11 +92,9 @@ public class Events implements ActionListener, MouseListener {
 							} else if (tab.verMatriz(window.getGameSpace().getMat(), 9)) {
 								window.getGameSpace().getTextFields()[i][j].setBackground(Color.GREEN);
 								win = true;
-//								System.out.println("Entro");
 							} else {
 								window.getGameSpace().getTextFields()[i][j].setBackground(Color.WHITE);
 							}
-//							System.out.println("Verify");
 						}		
 					}
 				}
@@ -85,30 +102,4 @@ public class Events implements ActionListener, MouseListener {
 		}).start();
 	}
 
-	@Override
-	public void mouseClicked(MouseEvent event) {
-
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent event) {
-//		if (event.getSource().equals(window.getbOptions().getbNewGame())) {
-//			window.getGameSpace().actTextFields();
-//		}
-	}
-
-	@Override
-	public void mouseExited(MouseEvent event) {
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent event) {
-
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent event) {
-
-	}
 }

@@ -8,11 +8,21 @@ import co.yohan.gms.persistence.SudokuCSVDAO;
 import co.yohan.gms.persistence.Sudokus;
 import co.yohan.gms.utilities.Utilities;
 
+/**
+ * Clase Tablero - Clase que crea el tablero de la mtriz (model)
+ * 
+ * @version 1.0 - 20/10/2018
+ * @author Yohan Caro
+ *
+ */
 public class Tablero {
 	
 	private int matriz[][];
 	private SudokuCSVDAO csvdao;
 	
+	/**
+	 * Constructor
+	 */
 	public Tablero() {
 		Random rnd = new Random();
 		int number = (rnd.nextInt(20));
@@ -30,6 +40,12 @@ public class Tablero {
 		this.setMatriz(list.get(number));
 	}
 	
+	/**
+	 * Verifica una matriz
+	 * @param matriz
+	 * @param cant
+	 * @return
+	 */
 	public boolean verSubMatriz(int[][] matriz, int cant) {
 		for (int k = 1; k <= 9; k++) {
 			if (Utilities.contNumberOnMatrix(k, matriz) > cant) {
@@ -39,6 +55,12 @@ public class Tablero {
 		return true;
 	}
 	
+	/**
+	 * Verifica la matriz
+	 * @param matriz
+	 * @param cant
+	 * @return
+	 */
 	public boolean verMatriz(int[][] matriz, int cant) {
 		for (int k = 1; k <= 9; k++) {
 			if (Utilities.contNumberOnMatrix(k, matriz) != cant) {
@@ -48,6 +70,13 @@ public class Tablero {
 		return true;
 	}
 	
+	/**
+	 * Extrae un amtriz de una matriz :p
+	 * @param a
+	 * @param b
+	 * @param mat
+	 * @return
+	 */
 	public int[][] extraMatriz(int a, int b, int[][] mat) {
 		int arra[] = new int[9];
 		int cont = 0;
@@ -63,6 +92,11 @@ public class Tablero {
 		return this.arrayToMatriz(arra);
 	}
 	
+	/**
+	 * Convierte un vector en una matriz (Faltan excepciones)
+	 * @param vec
+	 * @return
+	 */
 	public int[][] arrayToMatriz(int vec[]) {
 		int matriz[][] = new int[3][3];
 		int cont = 0;

@@ -8,6 +8,13 @@ import javax.swing.JFrame;
 
 import co.yohan.gms.controller.Events;
 
+/**
+ * Clase MainWindow - Ventana principal de la app
+ * 
+ * @version 1.1 - 20/10/2018
+ * @author Yohan Caro
+ *
+ */
 public class MainWindow extends JFrame{
 	
 	private Title pTitle;
@@ -24,7 +31,6 @@ public class MainWindow extends JFrame{
 		this.setLocationRelativeTo(null);
 				
 		this.init();
-		this.addMouseListener(events);
 		this.icon();
 	}
 	

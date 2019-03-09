@@ -5,6 +5,13 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Clase Title - Clase que crea un titulo en el juego 
+ * 
+ * @version 1.0 - 22/10/2018
+ * @author Yohan Caro
+ *
+ */
 public class Title extends JPanel{
 	
 	private JLabel lTitle;
